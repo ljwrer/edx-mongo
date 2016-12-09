@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 /* Fields that must be in the schema:
  *  _id:          a string representing the course number, such as "CS-101".
@@ -10,11 +10,23 @@ var mongoose = require('mongoose');
  *  requirements: an of course numbers (as strings) representing the courses
  *                a student should take before taking this course.
  */
-var schema = new mongoose.Schema({
-  // Implement schema here!
-    _id:{
-        type:String,
-
+const schema = new mongoose.Schema({
+    // Implement schema here!
+    _id: {
+        type: String,
+        required: true
+    },
+    title: {
+        type: String,
+        required: true,
+        maxlength: 140
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    requirements:{
+        type:Array
     }
 });
 
